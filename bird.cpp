@@ -283,6 +283,8 @@ void drawDisk(const Position& center, double radius,
    glEnd();
 }
 
+using DrawDiskFunc = void(*)(const Position&, double, double, double, double);
+
 /*********************************************
  * STANDARD DRAW
  * Draw a standard bird: blue center and white outline
