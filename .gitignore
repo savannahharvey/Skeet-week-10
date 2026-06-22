@@ -1,0 +1,11 @@
+# IDE and build tool directories
+.vs/
+x64/
+
+# Package management
+packages/
+packages.config
+
+# Project-specific / Build outputs
+Skeet/
+Skeet.xcodeproj/
