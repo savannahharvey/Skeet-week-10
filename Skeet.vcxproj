@@ -28,6 +28,7 @@
     <ClCompile Include="position.cpp" />
     <ClCompile Include="score.cpp" />
     <ClCompile Include="skeet.cpp" />
+    <ClCompile Include="spawner.cpp" />
     <ClCompile Include="time.cpp" />
     <ClCompile Include="uiInteract.cpp" />
   </ItemGroup>
@@ -40,6 +41,7 @@
     <ClInclude Include="position.h" />
     <ClInclude Include="score.h" />
     <ClInclude Include="skeet.h" />
+    <ClInclude Include="spawner.h" />
     <ClInclude Include="time.h" />
     <ClInclude Include="uiInteract.h" />
   </ItemGroup>
