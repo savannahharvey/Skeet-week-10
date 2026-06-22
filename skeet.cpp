@@ -5,7 +5,9 @@
 
 #include <string>
 #include <sstream>
+#include <iomanip>
 #include "skeet.h"
+#include "spawner.h"
 using namespace std;
 
 
@@ -38,7 +40,7 @@ using namespace std;
 void Skeet::animate()
 {
    time++;
-   
+
    // if status, then do not move the game
    if (time.isStatus())
    {
@@ -49,10 +51,10 @@ void Skeet::animate()
       points.clear();
       return;
    }
-   
+
    // spawn
    spawn();
-   
+
    // move the birds and the bullets
    for (auto element : birds)
    {
@@ -63,16 +65,16 @@ void Skeet::animate()
       bullet->move(effects);
    for (auto effect : effects)
       effect->fly();
-   for (auto & pts : points)
+   for (auto& pts : points)
       pts.update();
-      
+
    // hit detection
    for (auto element : birds)
       for (auto bullet : bullets)
          if (!element->isDead() && !bullet->isDead() &&
-             element->getRadius() + bullet->getRadius() >
-             minimumDistance(element->getPosition(), element->getVelocity(),
-                             bullet->getPosition(),  bullet->getVelocity()))
+            element->getRadius() + bullet->getRadius() >
+            minimumDistance(element->getPosition(), element->getVelocity(),
+               bullet->getPosition(), bullet->getVelocity()))
          {
             for (int i = 0; i < 25; i++)
                effects.push_back(new Fragment(bullet->getPosition(), bullet->getVelocity()));
@@ -82,7 +84,7 @@ void Skeet::animate()
             bullet->setValue(-(element->getPoints()));
             element->setPoints(0);
          }
-   
+
    // remove the zombie birds
    for (auto it = birds.begin(); it != birds.end();)
       if ((*it)->isDead())
@@ -94,7 +96,7 @@ void Skeet::animate()
       }
       else
          ++it;
-       
+
    // remove zombie bullets
    for (auto it = bullets.begin(); it != bullets.end(); )
       if ((*it)->isDead())
@@ -107,7 +109,7 @@ void Skeet::animate()
       }
       else
          ++it;
-   
+
    // remove zombie fragments
    for (auto it = effects.begin(); it != effects.end();)
       if ((*it)->isDead())
@@ -150,8 +152,8 @@ void Skeet::drawBackground(double redBack, double greenBack, double blueBack) co
  *        Background  Background color
  *************************************************************************/
 void Skeet::drawTimer(double percent,
-                     double redFore, double greenFore, double blueFore,
-                     double redBack, double greenBack, double blueBack) const
+   double redFore, double greenFore, double blueFore,
+   double redBack, double greenBack, double blueBack) const
 {
    double radians;
 
@@ -239,7 +241,7 @@ void Skeet::drawTimer(double percent,
  *   INPUT  topLeft   The top left corner of the text
  *          text      The text to be displayed
  ************************************************************************/
-void drawText(const Position& topLeft, const char* text) 
+void drawText(const Position& topLeft, const char* text)
 {
    void* pFont = GLUT_TEXT;
    glColor3f((GLfloat)1.0 /* red % */, (GLfloat)1.0 /* green % */, (GLfloat)1.0 /* blue % */);
@@ -251,7 +253,7 @@ void drawText(const Position& topLeft, const char* text)
    for (const char* p = text; *p; p++)
       glutBitmapCharacter(pFont, *p);
 }
-void drawText(const Position & topLeft, const string & text)
+void drawText(const Position& topLeft, const string& text)
 {
    drawText(topLeft, text.c_str());
 }
@@ -294,14 +296,14 @@ void Skeet::drawLevel() const
 {
    // output the background
    drawBackground(time.level() * .1, 0.0, 0.0);
-   
+
    // draw the bullseye
    if (bullseye)
       drawBullseye(gun.getAngle());
 
    // output the gun
    gun.display();
-         
+
    // output the birds, bullets, and fragments
    for (auto& pts : points)
       pts.show();
@@ -311,11 +313,11 @@ void Skeet::drawLevel() const
       bullet->output();
    for (auto element : birds)
       element->draw();
-   
+
    // status
-   drawText(Position(10,                         dimensions.getY() - 30), score.getText()  );
-   drawText(Position(dimensions.getX() / 2 - 30, dimensions.getY() - 30), time.getText()   );
-   drawText(Position(dimensions.getX() - 110,    dimensions.getY() - 30), hitRatio.getText());
+   drawText(Position(10, dimensions.getY() - 30), score.getText());
+   drawText(Position(dimensions.getX() / 2 - 30, dimensions.getY() - 30), time.getText());
+   drawText(Position(dimensions.getX() - 110, dimensions.getY() - 30), hitRatio.getText());
 }
 
 /************************
@@ -330,22 +332,22 @@ void Skeet::drawStatus() const
    {
       // draw the end of game message
       drawText(Position(dimensions.getX() / 2 - 30, dimensions.getY() / 2 + 10),
-               "Game Over");
+         "Game Over");
 
       // draw end of game status
       drawText(Position(dimensions.getX() / 2 - 30, dimensions.getY() / 2 - 10),
-               score.getText());
+         score.getText());
    }
    else
    {
       // output the status timer
       drawTimer(1.0 - time.percentLeft(),
-                     (time.level() - 0.0) * .1, 0.0, 0.0,
-                     (time.level() - 1.0) * .1, 0.0, 0.0);
+         (time.level() - 0.0) * .1, 0.0, 0.0,
+         (time.level() - 1.0) * .1, 0.0, 0.0);
 
       // draw the message giving a countdown
       sout << "Level " << time.level()
-           << " begins in " << time.secondsLeft() << " seconds";
+         << " begins in " << time.secondsLeft() << " seconds";
       drawText(Position(dimensions.getX() / 2 - 110, dimensions.getY() / 2 - 10),
          sout.str());
    }
@@ -355,11 +357,11 @@ void Skeet::drawStatus() const
  * SKEET INTERACT
  * handle all user input
  ************************/
-void Skeet::interact(const UserInput & ui)
+void Skeet::interact(const UserInput& ui)
 {
    // reset the game
    if (time.isGameOver() && ui.isSpace())
-   { 
+   {
       time.reset();
       score.reset();
       hitRatio.reset();
@@ -368,7 +370,7 @@ void Skeet::interact(const UserInput & ui)
 
    // gather input from the interface
    gun.interact(ui.isUp() + ui.isRight(), ui.isDown() + ui.isLeft());
-   Bullet *p = nullptr;
+   Bullet* p = nullptr;
 
    // a pellet can be shot at any time
    if (ui.isSpace())
@@ -379,110 +381,145 @@ void Skeet::interact(const UserInput & ui)
    // bombs can be shot at level 3 and higher
    else if (ui.isB() && time.level() > 2)
       p = new Bomb(gun.getAngle());
-   
+
    bullseye = ui.isShift();
 
    // add something if something has been added
    if (nullptr != p)
       bullets.push_back(p);
-   
+
    // send movement information to all the bullets. Only the missile cares.
    for (auto bullet : bullets)
-      bullet->input(ui.isUp() + ui.isRight(), ui.isDown() + ui.isLeft(), ui.isB()); 
+      bullet->input(ui.isUp() + ui.isRight(), ui.isDown() + ui.isLeft(), ui.isB());
 }
 
-/******************************************************************
- * RANDOM
- * This function generates a random number.
- *
- *    INPUT:   min, max : The number of values (min <= num <= max)
- *    OUTPUT   <return> : Return the integer
- ****************************************************************/
-int random(int min, int max)
+/************************
+ * SKEET APPEND BIRD CODE
+ * add one encoded bird spawn order to the spawn code
+ ************************/
+void Skeet::appendBirdCode(string& code, int size, int birdType, int speed,
+   int points, int spawnRate) const
 {
-   assert(min < max);
-   int num = (rand() % (max - min)) + min;
-   assert(min <= num && num <= max);
+   if (size < 0 || size > 99)
+      return;
+   if (birdType < 0 || birdType > 9)
+      return;
+   if (speed < 0 || speed > 99)
+      return;
+   if (points < 0 || points > 99)
+      return;
+   if (spawnRate < 0 || spawnRate > 9)
+      return;
 
-   return num;
+   ostringstream encoded;
+   encoded << setfill('0')
+      << setw(2) << size
+      << birdType
+      << setw(2) << speed
+      << setw(2) << points
+      << spawnRate;
+   code += encoded.str();
 }
 
 /************************
  * SKEET SPAWN
- * lanuch new birds
+ * launch new birds
  ************************/
 void Skeet::spawn()
 {
-   double size;
+   const int STANDARD = 1;
+   const int SINKER = 2;
+   const int FLOATER = 3;
+   const int CRAZY = 4;
+
+   bool birdsEmpty = birds.size() == 0;
+
+   int size = 30;
+   int birdType = STANDARD;
+   int speed = 70;
+   int points = 10;
+   int spawnRate = 8;
+   string code;
+
    switch (time.level())
    {
       // in level 1 spawn big birds occasionally
-      case 1:
-         size = 30.0;
-         // spawns when there is nothing on the screen
-         if (birds.size() == 0 && random(0, 15) == 1)
-            birds.push_back(new Standard(size, 7.0));
-         
-         // spawn every 4 seconds
-         if (random(0, 4 * 30) == 1)
-            birds.push_back(new Standard(size, 7.0));
-         break;
-         
+   case 1:
+      if (birdsEmpty)
+         appendBirdCode(code, size, birdType, speed, points, 1);
+
+      appendBirdCode(code, size, birdType, speed, points, spawnRate);
+      break;
+
       // two kinds of birds in level 2
-      case 2:
-         size = 25.0;
-         // spawns when there is nothing on the screen
-         if (birds.size() == 0 && random(0, 15) == 1)
-            birds.push_back(new Standard(size, 7.0, 12));
+   case 2:
+      size = 25;
+      points = 12;
+      if (birdsEmpty)
+         appendBirdCode(code, size, birdType, speed, points, 1);
 
-         // spawn every 4 seconds
-         if (random(0, 4 * 30) == 1)
-            birds.push_back(new Standard(size, 5.0, 12));
-         // spawn every 3 seconds
-         if (random(0, 3 * 30) == 1)
-            birds.push_back(new Sinker(size));
-         break;
-      
+      speed = 50;
+      appendBirdCode(code, size, birdType, speed, points, spawnRate);
+
+      birdType = SINKER;
+      speed = 45;
+      points = 20;
+      spawnRate = 6;
+      appendBirdCode(code, size, birdType, speed, points, spawnRate);
+      break;
+
       // three kinds of birds in level 3
-      case 3:
-         size = 20.0;
-         // spawns when there is nothing on the screen
-         if (birds.size() == 0 && random(0, 15) == 1)
-            birds.push_back(new Standard(size, 5.0, 15));
+   case 3:
+      size = 20;
+      speed = 50;
+      points = 15;
+      if (birdsEmpty)
+         appendBirdCode(code, size, birdType, speed, points, 1);
 
-         // spawn every 4 seconds
-         if (random(0, 4 * 30) == 1)
-            birds.push_back(new Standard(size, 5.0, 15));
-         // spawn every 4 seconds
-         if (random(0, 4 * 30) == 1)
-            birds.push_back(new Sinker(size, 4.0, 22));
-         // spawn every 4 seconds
-         if (random(0, 4 * 30) == 1)
-            birds.push_back(new Floater(size));
-         break;
-         
-      // three kinds of birds in level 4
-      case 4:
-         size = 15.0;
-         // spawns when there is nothing on the screen
-         if (birds.size() == 0 && random(0, 15) == 1)
-            birds.push_back(new Standard(size, 4.0, 18));
+      appendBirdCode(code, size, birdType, speed, points, spawnRate);
 
-         // spawn every 4 seconds
-         if (random(0, 4 * 30) == 1)
-            birds.push_back(new Standard(size, 4.0, 18));
-         // spawn every 4 seconds
-         if (random(0, 4 * 30) == 1)
-            birds.push_back(new Sinker(size, 3.5, 25));
-         // spawn every 4 seconds
-         if (random(0, 4 * 30) == 1)
-            birds.push_back(new Floater(size, 4.0, 25));
-         // spawn every 4 seconds
-         if (random(0, 4 * 30) == 1)
-            birds.push_back(new Crazy(size));
-         break;
-         
-      default:
-         break;
+      birdType = SINKER;
+      speed = 40;
+      points = 22;
+      appendBirdCode(code, size, birdType, speed, points, spawnRate);
+
+      birdType = FLOATER;
+      speed = 50;
+      points = 15;
+      appendBirdCode(code, size, birdType, speed, points, spawnRate);
+      break;
+
+      // four kinds of birds in level 4
+   case 4:
+      size = 15;
+      speed = 40;
+      points = 18;
+      if (birdsEmpty)
+         appendBirdCode(code, size, birdType, speed, points, 1);
+
+      appendBirdCode(code, size, birdType, speed, points, spawnRate);
+
+      birdType = SINKER;
+      speed = 35;
+      points = 25;
+      appendBirdCode(code, size, birdType, speed, points, spawnRate);
+
+      birdType = FLOATER;
+      speed = 40;
+      points = 25;
+      appendBirdCode(code, size, birdType, speed, points, spawnRate);
+
+      birdType = CRAZY;
+      speed = 45;
+      points = 30;
+      appendBirdCode(code, size, birdType, speed, points, spawnRate);
+      break;
+
+   default:
+      break;
    }
+
+   list<Bird*> spawnedBirds = Spawner::spawn(code);
+   for (auto bird : spawnedBirds)
+      birds.push_back(bird);
 }
