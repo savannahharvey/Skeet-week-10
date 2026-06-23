@@ -10,6 +10,9 @@
 #pragma once
 #include "position.h"
 
+// forward declaration of the draw disk function pointer
+using DrawDiskFunc = void(*)(const Position&, double, double, double, double);
+
 /**********************
  * BIRD
  * Everything that can be shot
@@ -46,7 +49,7 @@ public:
    }
 
    // special functions
-   virtual void draw() = 0;
+   virtual void draw(DrawDiskFunc drawDiskFunc) = 0;
    virtual void advance() = 0;
 };
 
@@ -58,7 +61,7 @@ class Standard : public Bird
 {
 public:
     Standard(double radius = 25.0, double speed = 5.0, int points = 10);
-    void draw();
+    void draw(DrawDiskFunc drawDiskFunc);
     void advance();
 };
 
@@ -70,7 +73,7 @@ class Floater : public Bird
 {
 public:
     Floater(double radius = 30.0, double speed = 5.0, int points = 15);
-    void draw();
+    void draw(DrawDiskFunc drawDiskFunc);
     void advance();
 };
 
@@ -82,7 +85,7 @@ class Crazy : public Bird
 {
 public:
     Crazy(double radius = 30.0, double speed = 4.5, int points = 30);
-    void draw();
+    void draw(DrawDiskFunc drawDiskFunc);
     void advance();
 };
 
@@ -94,6 +97,6 @@ class Sinker : public Bird
 {
 public:
     Sinker(double radius = 30.0, double speed = 4.5, int points = 20);
-    void draw();
+    void draw(DrawDiskFunc drawDiskFunc);
     void advance();
 };
