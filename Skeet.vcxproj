@@ -21,6 +21,8 @@
   <ItemGroup>
     <ClCompile Include="bird.cpp" />
     <ClCompile Include="bullet.cpp" />
+    <ClCompile Include="drawOrder.cpp" />
+    <ClCompile Include="drawOrderFactory.cpp" />
     <ClCompile Include="effect.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="gun.cpp" />
@@ -34,6 +36,9 @@
   <ItemGroup>
     <ClInclude Include="bullet.h" />
     <ClInclude Include="bird.h" />
+    <ClInclude Include="drawExecutor.h" />
+    <ClInclude Include="drawOrder.h" />
+    <ClInclude Include="drawOrderFactory.h" />
     <ClInclude Include="effect.h" />
     <ClInclude Include="gun.h" />
     <ClInclude Include="points.h" />

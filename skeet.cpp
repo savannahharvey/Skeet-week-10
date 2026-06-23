@@ -6,6 +6,8 @@
 #include <string>
 #include <sstream>
 #include "skeet.h"
+#include "drawExecutor.h"
+#include "drawOrderFactory.h"
 using namespace std;
 
 
@@ -310,7 +312,11 @@ void Skeet::drawLevel() const
    for (auto bullet : bullets)
       bullet->output();
    for (auto element : birds)
-      element->draw();
+   {
+      auto drawOrder = DrawOrderFactory::createDrawOrder(element);
+      DrawExecutor::execute(drawOrder);
+      delete drawOrder;
+   }
    
    // status
    drawText(Position(10,                         dimensions.getY() - 30), score.getText()  );
