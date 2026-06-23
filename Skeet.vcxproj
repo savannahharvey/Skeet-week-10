@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -21,13 +21,14 @@
   <ItemGroup>
     <ClCompile Include="bird.cpp" />
     <ClCompile Include="bullet.cpp" />
-    <ClCompile Include="drawOrder.cpp" />
-    <ClCompile Include="drawOrderFactory.cpp" />
+    <ClCompile Include="order.cpp" />
+    <ClCompile Include="orderFactory.cpp" />
     <ClCompile Include="effect.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="gun.cpp" />
     <ClCompile Include="points.cpp" />
     <ClCompile Include="position.cpp" />
+    <ClCompile Include="random.cpp" />
     <ClCompile Include="score.cpp" />
     <ClCompile Include="skeet.cpp" />
     <ClCompile Include="time.cpp" />
@@ -36,13 +37,14 @@
   <ItemGroup>
     <ClInclude Include="bullet.h" />
     <ClInclude Include="bird.h" />
-    <ClInclude Include="drawExecutor.h" />
-    <ClInclude Include="drawOrder.h" />
-    <ClInclude Include="drawOrderFactory.h" />
+    <ClInclude Include="executor.h" />
+    <ClInclude Include="order.h" />
+    <ClInclude Include="orderFactory.h" />
     <ClInclude Include="effect.h" />
     <ClInclude Include="gun.h" />
     <ClInclude Include="points.h" />
     <ClInclude Include="position.h" />
+    <ClInclude Include="random.h" />
     <ClInclude Include="score.h" />
     <ClInclude Include="skeet.h" />
     <ClInclude Include="time.h" />

@@ -6,8 +6,8 @@
 #include <string>
 #include <sstream>
 #include "skeet.h"
-#include "drawExecutor.h"
-#include "drawOrderFactory.h"
+#include "executor.h"
+#include "orderFactory.h"
 using namespace std;
 
 
@@ -58,7 +58,10 @@ void Skeet::animate()
    // move the birds and the bullets
    for (auto element : birds)
    {
-      element->advance();
+      auto advanceOrder = OrderFactory::createAdvanceOrder(element);
+      Executor::execute(advanceOrder);
+      delete advanceOrder;
+
       hitRatio.adjust(element->isDead() ? -1 : 0);
    }
    for (auto bullet : bullets)
@@ -313,8 +316,8 @@ void Skeet::drawLevel() const
       bullet->output();
    for (auto element : birds)
    {
-      auto drawOrder = DrawOrderFactory::createDrawOrder(element);
-      DrawExecutor::execute(drawOrder);
+      auto drawOrder = OrderFactory::createDrawOrder(element);
+      Executor::execute(drawOrder);
       delete drawOrder;
    }
    

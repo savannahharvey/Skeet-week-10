@@ -45,9 +45,6 @@ public:
       return (pt.getX() < -radius || pt.getX() >= dimensions.getX() + radius ||
               pt.getY() < -radius || pt.getY() >= dimensions.getY() + radius);
    }
-
-   // special functions
-   virtual void advance() = 0;
 };
 
 /*********************************************
@@ -59,7 +56,6 @@ class Standard : public Bird
 public:
     Standard(double radius = 25.0, double speed = 5.0, int points = 10);
     virtual std::string getType() const override { return "Standard"; }
-    void advance();
 };
 
 /*********************************************
@@ -71,7 +67,6 @@ class Floater : public Bird
 public:
     Floater(double radius = 30.0, double speed = 5.0, int points = 15);
     virtual std::string getType() const override { return "Floater"; }
-    void advance();
 };
 
 /*********************************************
@@ -83,7 +78,6 @@ class Crazy : public Bird
 public:
     Crazy(double radius = 30.0, double speed = 4.5, int points = 30);
     virtual std::string getType() const override { return "Crazy"; }
-    void advance();
 };
 
 /*********************************************
@@ -95,5 +89,4 @@ class Sinker : public Bird
 public:
     Sinker(double radius = 30.0, double speed = 4.5, int points = 20);
     virtual std::string getType() const override { return "Sinker"; }
-    void advance();
 };

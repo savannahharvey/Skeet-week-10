@@ -1,13 +1,14 @@
-C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\bird.cpp;C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\Skeet\x64\Debug\bird.obj
-C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\bullet.cpp;C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\Skeet\x64\Debug\bullet.obj
-C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\drawOrder.cpp;C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\Skeet\x64\Debug\drawOrder.obj
-C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\drawOrderFactory.cpp;C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\Skeet\x64\Debug\drawOrderFactory.obj
-C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\effect.cpp;C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\Skeet\x64\Debug\effect.obj
-C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\game.cpp;C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\Skeet\x64\Debug\game.obj
-C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\gun.cpp;C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\Skeet\x64\Debug\gun.obj
-C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\points.cpp;C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\Skeet\x64\Debug\points.obj
-C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\position.cpp;C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\Skeet\x64\Debug\position.obj
-C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\score.cpp;C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\Skeet\x64\Debug\score.obj
-C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\skeet.cpp;C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\Skeet\x64\Debug\skeet.obj
-C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\time.cpp;C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\Skeet\x64\Debug\time.obj
-C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\uiInteract.cpp;C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\Skeet\x64\Debug\uiInteract.obj
+C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\bird.cpp;C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\Skeet\x64\Debug\bird.obj
+C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\bullet.cpp;C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\Skeet\x64\Debug\bullet.obj
+C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\order.cpp;C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\Skeet\x64\Debug\order.obj
+C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\orderFactory.cpp;C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\Skeet\x64\Debug\orderFactory.obj
+C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\effect.cpp;C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\Skeet\x64\Debug\effect.obj
+C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\game.cpp;C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\Skeet\x64\Debug\game.obj
+C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\gun.cpp;C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\Skeet\x64\Debug\gun.obj
+C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\points.cpp;C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\Skeet\x64\Debug\points.obj
+C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\position.cpp;C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\Skeet\x64\Debug\position.obj
+C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\random.cpp;C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\Skeet\x64\Debug\random.obj
+C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\score.cpp;C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\Skeet\x64\Debug\score.obj
+C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\skeet.cpp;C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\Skeet\x64\Debug\skeet.obj
+C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\time.cpp;C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\Skeet\x64\Debug\time.obj
+C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\uiInteract.cpp;C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\Skeet\x64\Debug\uiInteract.obj

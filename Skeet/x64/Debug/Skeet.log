@@ -1,21 +1,28 @@
-﻿  skeet.cpp
-C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\drawExecutor.h(4,14): warning C4091: 'static ': ignored on left of 'DrawExecutor' when no variable is declared
+﻿  order.cpp
+  orderFactory.cpp
+C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\orderFactory.h(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'orderFactory.cpp')
+  
+C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\orderFactory.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  (compiling source file 'orderFactory.cpp')
+  
+  skeet.cpp
+C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\executor.h(4,14): warning C4091: 'static ': ignored on left of 'Executor' when no variable is declared
   (compiling source file 'skeet.cpp')
   
-C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\drawOrderFactory.h(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\orderFactory.h(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   (compiling source file 'skeet.cpp')
   
-C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\drawOrderFactory.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\orderFactory.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   (compiling source file 'skeet.cpp')
   
-C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\drawOrderFactory.h(9,14): warning C4091: 'static ': ignored on left of 'DrawOrderFactory' when no variable is declared
-  (compiling source file 'skeet.cpp')
-  
-C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\skeet.cpp(269,14): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\skeet.cpp(270,14): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\skeet.cpp(277,17): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\skeet.cpp(278,17): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\skeet.cpp(280,20): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\skeet.cpp(281,20): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\skeet.cpp(284,30): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-  Skeet.vcxproj -> C:\Users\Kaleb\Documents\CSE331\Skeet-week-10\x64\Debug\Skeet.exe
+C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\skeet.cpp(272,14): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\skeet.cpp(273,14): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\skeet.cpp(280,17): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\skeet.cpp(281,17): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\skeet.cpp(283,20): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\skeet.cpp(284,20): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\skeet.cpp(287,30): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+  Generating Code...
+C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\orderFactory.cpp(21,1): warning C4715: 'OrderFactory::createDrawOrder': not all control paths return a value
+  Skeet.vcxproj -> C:\Users\lando\Classes\CSE 331\W10 ver. Codebase\x64\Debug\Skeet.exe
