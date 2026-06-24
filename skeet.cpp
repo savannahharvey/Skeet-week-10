@@ -54,15 +54,12 @@ void Skeet::animate()
    spawn();
    
    // move the birds and the bullets
-   for (auto element : birds)
-   {
-      element->advance();
-      hitRatio.adjust(element->isDead() ? -1 : 0);
-   }
-   for (auto bullet : bullets)
-      bullet->move(effects);
-   for (auto effect : effects)
-      effect->fly();
+   for (auto effect : effects)                                           // new
+      execute(moveEffect, effect);                                           // new
+   for (auto bullet : bullets)                                           // new
+      execute(moveBullet, bullet);                                           // new
+   for (auto element : birds)                                           // new
+      execute(moveBird, element);                                           // new
    for (auto & pts : points)
       pts.update();
       
@@ -76,8 +73,8 @@ void Skeet::animate()
          {
             for (int i = 0; i < 25; i++)
                effects.push_back(new Fragment(bullet->getPosition(), bullet->getVelocity()));
-            element->kill();
-            bullet->kill();
+				execute(killBird, element);                                           // new
+            execute(killBullet, bullet);                                           // new
             hitRatio.adjust(1);
             bullet->setValue(-(element->getPoints()));
             element->setPoints(0);
@@ -300,17 +297,17 @@ void Skeet::drawLevel() const
       drawBullseye(gun.getAngle());
 
    // output the gun
-   gun.display();
+   execute(drawGun, gun);                                                      // new
          
    // output the birds, bullets, and fragments
    for (auto& pts : points)
       pts.show();
    for (auto effect : effects)
-      effect->render();
+      execute(drawEffect, effect);                                           // new
    for (auto bullet : bullets)
-      bullet->output();
+      execute(drawBullet, bullet);                                           // new
    for (auto element : birds)
-      element->draw();
+      execute(drawBird, element);                                           // new
    
    // status
    drawText(Position(10,                         dimensions.getY() - 30), score.getText()  );
@@ -485,4 +482,97 @@ void Skeet::spawn()
       default:
          break;
    }
+}
+
+// new, everything after this
+
+/**************************************************************
+* SKEET EXECUTE
+* Execute for the given function pointer and the given object
+**************************************************************/
+void Skeet::execute(void (*function)(Bird*), Bird* p)
+{
+   assert(function != nullptr);
+   assert(p != nullptr);
+   function(p);
+}
+
+// Standalone functions
+
+// draw functions
+
+/**************************************************************
+* DRAW EFFECT
+* **************************************************************/
+void drawEffect(Effect* p)
+{
+   assert(p != nullptr);
+   p->render();
+}
+
+/**************************************************************
+* DRAW BULLET
+* *************************************************************/
+void drawBullet(Bullet* p)
+{
+   assert(p != nullptr);
+   p->output();
+}
+
+/**************************************************************
+* DRAW BIRD
+* *************************************************************/
+void drawBird(Bird* p)
+{
+   assert(p != nullptr);
+   p->draw();
+}
+
+// move functions
+
+/**************************************************************
+* MOVE EFFECT
+* **************************************************************/
+void moveEffect(Effect* p)
+{
+   assert(p != nullptr);
+   p->fly();
+}
+
+/**************************************************************
+* MOVE BULLET
+* *************************************************************/
+void moveBullet(Bullet* p)
+{
+   assert(p != nullptr);
+   p->move(Skeet::effects);
+}
+
+/**************************************************************
+* MOVE BIRD
+* *************************************************************/
+void moveBird(Bird* p)
+{
+   assert(p != nullptr);
+   p->advance();
+}
+
+// kill functions
+
+/**************************************************************
+* KILL BULLET
+* *************************************************************/
+void killBullet(Bullet* p)
+{
+   assert(p != nullptr);
+   p->kill();
+}
+
+/**************************************************************
+* KILL BIRD
+* *************************************************************/
+void killBird(Bird* p)
+{
+   assert(p != nullptr);
+   p->kill();
 }
