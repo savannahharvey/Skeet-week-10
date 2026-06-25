@@ -35,13 +35,13 @@ using namespace std;
 // forward declarations for the draw, move, and kill functions
 // draw commands
 void drawEffect(Effect* p);
-void drawBullet(Bullet* p);
+void drawBullet(const Bullet* p);
 void drawBird(Bird* p);
 void drawGun(Gun& gun);
 
 // move commands
 void moveEffect(Effect* p);
-void moveBullet(Bullet* p);
+void moveBullet(Bullet* p, std::list<Effect*>& effects);
 void moveBird(Bird* p);
 
 // kill commands
@@ -74,7 +74,7 @@ void Skeet::animate()
    for (auto effect : effects)                                           // new
       execute(moveEffect, effect);                                           // new
    for (auto bullet : bullets)                                           // new
-      execute(moveBullet, bullet);                                           // new
+      execute(moveBullet, bullet, effects);                                           // new
    for (auto element : birds)                                           // new
       execute(moveBird, element);                                           // new
    for (auto & pts : points)
@@ -518,11 +518,33 @@ void Skeet::execute(void (*function)(Bird*), Bird* p) const
 * SKEET EXECUTE
 * Execute for the given function pointer and the given object
 **************************************************************/
-void Skeet::execute(void (*function)(Bullet*), Bullet* p) const
+void Skeet::execute(void (*function)(Bullet*), Bullet* p)
 {
    assert(function != nullptr);
    assert(p != nullptr);
    function(p);
+}
+
+/**************************************************************
+* SKEET EXECUTE
+* Execute for the given function pointer and the given object
+**************************************************************/
+void Skeet::execute(void (*function)(const Bullet*), const Bullet* p) const
+{
+   assert(function != nullptr);
+   assert(p != nullptr);
+   function(p);
+}
+
+/**************************************************************
+* SKEET EXECUTE
+* Execute for the given function pointer and the given object
+**************************************************************/
+void Skeet::execute(void (*function)(Bullet*, std::list<Effect*>&), Bullet* p, std::list<Effect*>& effects) const
+{
+   assert(function != nullptr);
+   assert(p != nullptr);
+   function(p, effects);
 }
 
 /**************************************************************
@@ -540,7 +562,7 @@ void Skeet::execute(void (*function)(Effect*), Effect* p) const
 * SKEET EXECUTE
 * Execute for the given function pointer and the given object
 **************************************************************/
-void Skeet::execute(void (*function)(Gun&), Gun& gun) const
+void Skeet::execute(void (*function)(const Gun&), const Gun& gun) const
 {
    assert(function != nullptr);
    function(gun);
@@ -562,7 +584,7 @@ void drawEffect(Effect* p)
 /**************************************************************
 * DRAW BULLET
 * *************************************************************/
-void drawBullet(Bullet* p)
+void drawBullet(const Bullet* p)
 {
    assert(p != nullptr);
    p->output();
@@ -580,10 +602,9 @@ void drawBird(Bird* p)
 /**************************************************************
 * DRAW GUN
 * *************************************************************/
-void drawGun(Gun* p)
+void drawGun(const Gun& gun)
 {
-	assert(p != nullptr);
-	p->display();
+	gun.display();
 }
 
 // move functions
@@ -600,10 +621,10 @@ void moveEffect(Effect* p)
 /**************************************************************
 * MOVE BULLET
 * *************************************************************/
-void moveBullet(Bullet* p)
+void moveBullet(Bullet* p, std::list<Effect*>& effects)
 {
    assert(p != nullptr);
-   p->move(Skeet::effects());
+   p->move(effects);
 }
 
 /**************************************************************

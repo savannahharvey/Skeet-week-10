@@ -53,9 +53,11 @@ private:
     void drawBullseye(double angle) const;
 
     void execute(void (*function)(Bird*), Bird* p) const;          // new
-    void execute(void (*function)(Bullet*), Bullet* p) const;          // new
+    void execute(void (*function)(Bullet*), Bullet* p); // for killBullet (not const)
+    void execute(void (*function)(const Bullet*), const Bullet* p) const; // for drawBullet (const)
+    void execute(void (*function)(Bullet*, std::list<Effect*>&), Bullet* p, std::list<Effect*>& effects) const; // for moveBullet
     void execute(void (*function)(Effect*), Effect* p) const;          // new
-    void execute(void (*function)(Gun&), Gun& gun) const;          // new
+    void execute(void (*function)(const Gun&), const Gun& gun) const;          // new
 
     Gun gun;                       // the gun
     std::list<Bird*> birds;        // all the shootable birds
