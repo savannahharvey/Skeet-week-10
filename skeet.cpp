@@ -31,6 +31,23 @@ using namespace std;
 #define GLUT_TEXT GLUT_BITMAP_HELVETICA_12
 #endif // _WIN32
 
+// new
+// forward declarations for the draw, move, and kill functions
+// draw commands
+void drawEffect(Effect* p);
+void drawBullet(Bullet* p);
+void drawBird(Bird* p);
+void drawGun(Gun& gun);
+
+// move commands
+void moveEffect(Effect* p);
+void moveBullet(Bullet* p);
+void moveBird(Bird* p);
+
+// kill commands
+void killBullet(Bullet* p);
+void killBird(Bird* p);
+
 /************************
  * SKEET ANIMATE
  * move the gameplay by one unit of time
@@ -298,7 +315,7 @@ void Skeet::drawLevel() const
 
    // output the gun
    execute(drawGun, gun);                                                      // new
-         
+
    // output the birds, bullets, and fragments
    for (auto& pts : points)
       pts.show();
@@ -490,11 +507,43 @@ void Skeet::spawn()
 * SKEET EXECUTE
 * Execute for the given function pointer and the given object
 **************************************************************/
-void Skeet::execute(void (*function)(Bird*), Bird* p)
+void Skeet::execute(void (*function)(Bird*), Bird* p) const
 {
    assert(function != nullptr);
    assert(p != nullptr);
    function(p);
+}
+
+/**************************************************************
+* SKEET EXECUTE
+* Execute for the given function pointer and the given object
+**************************************************************/
+void Skeet::execute(void (*function)(Bullet*), Bullet* p) const
+{
+   assert(function != nullptr);
+   assert(p != nullptr);
+   function(p);
+}
+
+/**************************************************************
+* SKEET EXECUTE
+* Execute for the given function pointer and the given object
+**************************************************************/
+void Skeet::execute(void (*function)(Effect*), Effect* p) const
+{
+   assert(function != nullptr);
+   assert(p != nullptr);
+   function(p);
+}
+
+/**************************************************************
+* SKEET EXECUTE
+* Execute for the given function pointer and the given object
+**************************************************************/
+void Skeet::execute(void (*function)(Gun&), Gun& gun) const
+{
+   assert(function != nullptr);
+   function(gun);
 }
 
 // Standalone functions
@@ -528,6 +577,15 @@ void drawBird(Bird* p)
    p->draw();
 }
 
+/**************************************************************
+* DRAW GUN
+* *************************************************************/
+void drawGun(Gun* p)
+{
+	assert(p != nullptr);
+	p->display();
+}
+
 // move functions
 
 /**************************************************************
@@ -545,7 +603,7 @@ void moveEffect(Effect* p)
 void moveBullet(Bullet* p)
 {
    assert(p != nullptr);
-   p->move(Skeet::effects);
+   p->move(Skeet::effects());
 }
 
 /**************************************************************

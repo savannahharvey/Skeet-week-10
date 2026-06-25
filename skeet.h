@@ -51,8 +51,11 @@ private:
                    double redFore, double greenFore, double blueFore,
                    double redBack, double greenBack, double blueBack) const;
     void drawBullseye(double angle) const;
-    void execute(void (*function)(Bird*), Bird* p);                                           // new
-    void order(Subject& subject);                                           // new
+
+    void execute(void (*function)(Bird*), Bird* p) const;          // new
+    void execute(void (*function)(Bullet*), Bullet* p) const;          // new
+    void execute(void (*function)(Effect*), Effect* p) const;          // new
+    void execute(void (*function)(Gun&), Gun& gun) const;          // new
 
     Gun gun;                       // the gun
     std::list<Bird*> birds;        // all the shootable birds
