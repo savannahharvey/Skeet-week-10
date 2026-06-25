@@ -37,7 +37,7 @@ using namespace std;
 void drawEffect(Effect* p);
 void drawBullet(const Bullet* p);
 void drawBird(Bird* p);
-void drawGun(Gun& gun);
+void drawGun(const Gun& gun);
 
 // move commands
 void moveEffect(Effect* p);
