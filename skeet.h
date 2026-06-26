@@ -18,6 +18,7 @@
 #include "time.h"
 #include "score.h"
 #include "points.h"
+#include "order.h"
 
 #include <list>
 
@@ -52,11 +53,9 @@ private:
                    double redBack, double greenBack, double blueBack) const;
     void drawBullseye(double angle) const;
 
-    void execute(void (*function)(Bird*), Bird* p) const;          // new
-    void execute(void (*function)(Bullet*), Bullet* p); // for killBullet (not const)
-    void execute(void (*function)(const Bullet*), const Bullet* p) const; // for drawBullet (const)
+    template <typename T>
+    void execute(void (*function)(T*), T* p) const; // handles Bird, Bullet (draw and kill), and Effect
     void execute(void (*function)(Bullet*, std::list<Effect*>&), Bullet* p, std::list<Effect*>& effects) const; // for moveBullet
-    void execute(void (*function)(Effect*), Effect* p) const;          // new
     void execute(void (*function)(const Gun&), const Gun& gun) const;          // new
 
     Gun gun;                       // the gun

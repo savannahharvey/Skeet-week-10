@@ -187,7 +187,7 @@ void Bullet::drawDot(const Position& point, double radius,
  * PELLET OUTPUT
  * Draw a pellet - just a 3-pixel dot
  *********************************************/
-void Pellet::output() const
+void Pellet::output()
 {
    if (!isDead())
       drawDot(pt, 3.0, 1.0, 1.0, 0.0);
@@ -197,7 +197,7 @@ void Pellet::output() const
  * BOMB OUTPUT
  * Draw a bomb - many dots to make it have a soft edge
  *********************************************/
-void Bomb::output() const
+void Bomb::output()
 {
    if (!isDead())
    {
@@ -213,7 +213,7 @@ void Bomb::output() const
  * SHRAPNEL OUTPUT
  * Draw a fragment - a bright yellow dot
  *********************************************/
-void Shrapnel::output() const
+void Shrapnel::output()
 {
     if (!isDead())
        drawDot(pt, radius, 1.0, 1.0, 0.0);
@@ -223,7 +223,7 @@ void Shrapnel::output() const
  * MISSILE OUTPUT
  * Draw a missile - a line and a dot for the fins
  *********************************************/
-void Missile::output() const
+void Missile::output()
 {
     if (!isDead())
     {

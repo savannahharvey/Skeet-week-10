@@ -31,23 +31,6 @@ using namespace std;
 #define GLUT_TEXT GLUT_BITMAP_HELVETICA_12
 #endif // _WIN32
 
-// new
-// forward declarations for the draw, move, and kill functions
-// draw commands
-void drawEffect(Effect* p);
-void drawBullet(const Bullet* p);
-void drawBird(Bird* p);
-void drawGun(const Gun& gun);
-
-// move commands
-void moveEffect(Effect* p);
-void moveBullet(Bullet* p, std::list<Effect*>& effects);
-void moveBird(Bird* p);
-
-// kill commands
-void killBullet(Bullet* p);
-void killBird(Bird* p);
-
 /************************
  * SKEET ANIMATE
  * move the gameplay by one unit of time
@@ -503,33 +486,8 @@ void Skeet::spawn()
 
 // new, everything after this
 
-/**************************************************************
-* SKEET EXECUTE
-* Execute for the given function pointer and the given object
-**************************************************************/
-void Skeet::execute(void (*function)(Bird*), Bird* p) const
-{
-   assert(function != nullptr);
-   assert(p != nullptr);
-   function(p);
-}
-
-/**************************************************************
-* SKEET EXECUTE
-* Execute for the given function pointer and the given object
-**************************************************************/
-void Skeet::execute(void (*function)(Bullet*), Bullet* p)
-{
-   assert(function != nullptr);
-   assert(p != nullptr);
-   function(p);
-}
-
-/**************************************************************
-* SKEET EXECUTE
-* Execute for the given function pointer and the given object
-**************************************************************/
-void Skeet::execute(void (*function)(const Bullet*), const Bullet* p) const
+template <typename T>
+void Skeet::execute(void (*function)(T*), T* p) const
 {
    assert(function != nullptr);
    assert(p != nullptr);
@@ -551,107 +509,8 @@ void Skeet::execute(void (*function)(Bullet*, std::list<Effect*>&), Bullet* p, s
 * SKEET EXECUTE
 * Execute for the given function pointer and the given object
 **************************************************************/
-void Skeet::execute(void (*function)(Effect*), Effect* p) const
-{
-   assert(function != nullptr);
-   assert(p != nullptr);
-   function(p);
-}
-
-/**************************************************************
-* SKEET EXECUTE
-* Execute for the given function pointer and the given object
-**************************************************************/
 void Skeet::execute(void (*function)(const Gun&), const Gun& gun) const
 {
    assert(function != nullptr);
    function(gun);
-}
-
-// Standalone functions
-
-// draw functions
-
-/**************************************************************
-* DRAW EFFECT
-* **************************************************************/
-void drawEffect(Effect* p)
-{
-   assert(p != nullptr);
-   p->render();
-}
-
-/**************************************************************
-* DRAW BULLET
-* *************************************************************/
-void drawBullet(const Bullet* p)
-{
-   assert(p != nullptr);
-   p->output();
-}
-
-/**************************************************************
-* DRAW BIRD
-* *************************************************************/
-void drawBird(Bird* p)
-{
-   assert(p != nullptr);
-   p->draw();
-}
-
-/**************************************************************
-* DRAW GUN
-* *************************************************************/
-void drawGun(const Gun& gun)
-{
-	gun.display();
-}
-
-// move functions
-
-/**************************************************************
-* MOVE EFFECT
-* **************************************************************/
-void moveEffect(Effect* p)
-{
-   assert(p != nullptr);
-   p->fly();
-}
-
-/**************************************************************
-* MOVE BULLET
-* *************************************************************/
-void moveBullet(Bullet* p, std::list<Effect*>& effects)
-{
-   assert(p != nullptr);
-   p->move(effects);
-}
-
-/**************************************************************
-* MOVE BIRD
-* *************************************************************/
-void moveBird(Bird* p)
-{
-   assert(p != nullptr);
-   p->advance();
-}
-
-// kill functions
-
-/**************************************************************
-* KILL BULLET
-* *************************************************************/
-void killBullet(Bullet* p)
-{
-   assert(p != nullptr);
-   p->kill();
-}
-
-/**************************************************************
-* KILL BIRD
-* *************************************************************/
-void killBird(Bird* p)
-{
-   assert(p != nullptr);
-   p->kill();
 }
