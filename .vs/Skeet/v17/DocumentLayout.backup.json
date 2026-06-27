@@ -1,14 +1,46 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Kaleb\\Documents\\CSE331\\Skeet-week-10\\",
+  "WorkspaceRootPath": "C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F7BB2D43-EBB3-4D58-9064-6E74A18316D7}|Skeet.vcxproj|C:\\Users\\Kaleb\\Documents\\CSE331\\Skeet-week-10\\skeet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7BB2D43-EBB3-4D58-9064-6E74A18316D7}|Skeet.vcxproj|C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\spawner.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F7BB2D43-EBB3-4D58-9064-6E74A18316D7}|Skeet.vcxproj|solutionrelative:spawner.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7BB2D43-EBB3-4D58-9064-6E74A18316D7}|Skeet.vcxproj|C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\spawner.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F7BB2D43-EBB3-4D58-9064-6E74A18316D7}|Skeet.vcxproj|solutionrelative:spawner.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7BB2D43-EBB3-4D58-9064-6E74A18316D7}|Skeet.vcxproj|C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\skeet.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F7BB2D43-EBB3-4D58-9064-6E74A18316D7}|Skeet.vcxproj|solutionrelative:skeet.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7BB2D43-EBB3-4D58-9064-6E74A18316D7}|Skeet.vcxproj|C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\skeet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{F7BB2D43-EBB3-4D58-9064-6E74A18316D7}|Skeet.vcxproj|solutionrelative:skeet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F7BB2D43-EBB3-4D58-9064-6E74A18316D7}|Skeet.vcxproj|C:\\Users\\Kaleb\\Documents\\CSE331\\Skeet-week-10\\skeet.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{F7BB2D43-EBB3-4D58-9064-6E74A18316D7}|Skeet.vcxproj|solutionrelative:skeet.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{F7BB2D43-EBB3-4D58-9064-6E74A18316D7}|Skeet.vcxproj|C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\bullet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F7BB2D43-EBB3-4D58-9064-6E74A18316D7}|Skeet.vcxproj|solutionrelative:bullet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7BB2D43-EBB3-4D58-9064-6E74A18316D7}|Skeet.vcxproj|C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\bullet.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F7BB2D43-EBB3-4D58-9064-6E74A18316D7}|Skeet.vcxproj|solutionrelative:bullet.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7BB2D43-EBB3-4D58-9064-6E74A18316D7}|Skeet.vcxproj|C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\gun.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F7BB2D43-EBB3-4D58-9064-6E74A18316D7}|Skeet.vcxproj|solutionrelative:gun.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7BB2D43-EBB3-4D58-9064-6E74A18316D7}|Skeet.vcxproj|C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\bird.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F7BB2D43-EBB3-4D58-9064-6E74A18316D7}|Skeet.vcxproj|solutionrelative:bird.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7BB2D43-EBB3-4D58-9064-6E74A18316D7}|Skeet.vcxproj|C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\bird.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F7BB2D43-EBB3-4D58-9064-6E74A18316D7}|Skeet.vcxproj|solutionrelative:bird.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +50,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -38,40 +74,129 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "skeet.cpp",
-              "DocumentMoniker": "C:\\Users\\Kaleb\\Documents\\CSE331\\Skeet-week-10\\skeet.cpp",
-              "RelativeDocumentMoniker": "skeet.cpp",
-              "ToolTip": "C:\\Users\\Kaleb\\Documents\\CSE331\\Skeet-week-10\\skeet.cpp",
-              "RelativeToolTip": "skeet.cpp",
-              "ViewState": "AgIAABwBAAAAAAAAAAAewDoBAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-06-22T16:55:22.774Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "skeet.h",
-              "DocumentMoniker": "C:\\Users\\Kaleb\\Documents\\CSE331\\Skeet-week-10\\skeet.h",
-              "RelativeDocumentMoniker": "skeet.h",
-              "ToolTip": "C:\\Users\\Kaleb\\Documents\\CSE331\\Skeet-week-10\\skeet.h",
-              "RelativeToolTip": "skeet.h",
-              "ViewState": "AgIAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "spawner.cpp",
+              "DocumentMoniker": "C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\spawner.cpp",
+              "RelativeDocumentMoniker": "spawner.cpp",
+              "ToolTip": "C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\spawner.cpp",
+              "RelativeToolTip": "spawner.cpp",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB4AAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-27T03:12:27.945Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "spawner.h",
+              "DocumentMoniker": "C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\spawner.h",
+              "RelativeDocumentMoniker": "spawner.h",
+              "ToolTip": "C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\spawner.h",
+              "RelativeToolTip": "spawner.h",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-06-22T16:55:17.643Z"
+              "WhenOpened": "2026-06-27T03:11:39.053Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-06-27T03:09:30.278Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "gun.cpp",
+              "DocumentMoniker": "C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\gun.cpp",
+              "RelativeDocumentMoniker": "gun.cpp",
+              "ToolTip": "C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\gun.cpp",
+              "RelativeToolTip": "gun.cpp",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAAGkAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-26T20:30:59.368Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "skeet.h",
+              "DocumentMoniker": "C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\skeet.h",
+              "RelativeDocumentMoniker": "skeet.h",
+              "ToolTip": "C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\skeet.h",
+              "RelativeToolTip": "skeet.h",
+              "ViewState": "AgIAACoAAAAAAAAAAAASwDgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-06-24T18:21:31.996Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "skeet.cpp",
+              "DocumentMoniker": "C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\skeet.cpp",
+              "RelativeDocumentMoniker": "skeet.cpp",
+              "ToolTip": "C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\skeet.cpp",
+              "RelativeToolTip": "skeet.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkCAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-23T19:06:06.861Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "bullet.cpp",
+              "DocumentMoniker": "C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\bullet.cpp",
+              "RelativeDocumentMoniker": "bullet.cpp",
+              "ToolTip": "C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\bullet.cpp",
+              "RelativeToolTip": "bullet.cpp",
+              "ViewState": "AgIAAJ8AAAAAAAAAAAAAAKMAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-25T09:26:27.751Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "bullet.h",
+              "DocumentMoniker": "C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\bullet.h",
+              "RelativeDocumentMoniker": "bullet.h",
+              "ToolTip": "C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\bullet.h",
+              "RelativeToolTip": "bullet.h",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAACcAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-06-25T09:01:21.887Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "bird.cpp",
+              "DocumentMoniker": "C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\bird.cpp",
+              "RelativeDocumentMoniker": "bird.cpp",
+              "ToolTip": "C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\bird.cpp",
+              "RelativeToolTip": "bird.cpp",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAAACUAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-23T18:38:01.369Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "bird.h",
+              "DocumentMoniker": "C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\bird.h",
+              "RelativeDocumentMoniker": "bird.h",
+              "ToolTip": "C:\\Users\\lando\\Classes\\CSE 331\\W10 ver. Codebase\\bird.h",
+              "RelativeToolTip": "bird.h",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACcAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-06-23T18:26:45.659Z"
             }
           ]
         }

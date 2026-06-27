@@ -9,6 +9,7 @@
 
 #pragma once
 
+#include <string>
 #include "position.h"
 #include "uiInteract.h"
 #include "bird.h"
@@ -18,6 +19,7 @@
 #include "time.h"
 #include "score.h"
 #include "points.h"
+#include "spawner.h"
 
 #include <list>
 
@@ -51,6 +53,12 @@ private:
                    double redFore, double greenFore, double blueFore,
                    double redBack, double greenBack, double blueBack) const;
     void drawBullseye(double angle) const;
+    void appendBirdCode(std::string& code,
+                            int size,
+                            int birdType,
+                            int speed,
+                            int points,
+                            int spawnRate) const;
 
     Gun gun;                       // the gun
     std::list<Bird*> birds;        // all the shootable birds

@@ -3,8 +3,9 @@
  * No actual birds were killed in the making of this game.
  **********************************************************************/
 
-#include <string>
 #include <sstream>
+#include <iomanip>
+
 #include "skeet.h"
 using namespace std;
 
@@ -409,80 +410,143 @@ int random(int min, int max)
 
 /************************
  * SKEET SPAWN
- * lanuch new birds
+ * launch new birds
  ************************/
 void Skeet::spawn()
 {
-   double size;
+   const int STANDARD = 1;
+   const int SINKER = 2;
+   const int FLOATER = 3;
+   const int CRAZY = 4;
+
+   bool birdsEmpty = birds.size() == 0;
+   int size = 30;
+   int birdType = STANDARD;
+   int speed = 70;
+   int points = 10;
+   int spawnRate = 8;
+   string code;
    switch (time.level())
    {
       // in level 1 spawn big birds occasionally
-      case 1:
-         size = 30.0;
-         // spawns when there is nothing on the screen
-         if (birds.size() == 0 && random(0, 15) == 1)
-            birds.push_back(new Standard(size, 7.0));
-         
-         // spawn every 4 seconds
-         if (random(0, 4 * 30) == 1)
-            birds.push_back(new Standard(size, 7.0));
-         break;
-         
+   case 1:
+      // spawns when there is nothing on the screen
+      if (birdsEmpty)
+         appendBirdCode(code, size, birdType, speed, points, 1);
+
+      // spawn every 4 seconds
+      appendBirdCode(code, size, birdType, speed, points, spawnRate);
+      break;
+
       // two kinds of birds in level 2
-      case 2:
-         size = 25.0;
-         // spawns when there is nothing on the screen
-         if (birds.size() == 0 && random(0, 15) == 1)
-            birds.push_back(new Standard(size, 7.0, 12));
+   case 2:
+      size = 25;
+      points = 12;
+      // spawns when there is nothing on the screen
+      if (birdsEmpty)
+         appendBirdCode(code, size, birdType, speed, points, 1);
 
-         // spawn every 4 seconds
-         if (random(0, 4 * 30) == 1)
-            birds.push_back(new Standard(size, 5.0, 12));
-         // spawn every 3 seconds
-         if (random(0, 3 * 30) == 1)
-            birds.push_back(new Sinker(size));
-         break;
-      
+      speed = 50;
+      // spawn every 4 seconds
+      appendBirdCode(code, size, birdType, speed, points, spawnRate);
+
+      // spawn every 3 seconds
+      birdType = SINKER;
+      speed = 45;
+      points = 20;
+      spawnRate = 6; // spawn every 3 seconds
+      appendBirdCode(code, size, birdType, speed, points, spawnRate);
+      break;
+
       // three kinds of birds in level 3
-      case 3:
-         size = 20.0;
-         // spawns when there is nothing on the screen
-         if (birds.size() == 0 && random(0, 15) == 1)
-            birds.push_back(new Standard(size, 5.0, 15));
+   case 3:
+      size = 20;
+      speed = 50;
+      points = 15;
+      // spawns when there is nothing on the screen
+      if (birdsEmpty)
+         appendBirdCode(code, size, birdType, speed, points, 1);
 
-         // spawn every 4 seconds
-         if (random(0, 4 * 30) == 1)
-            birds.push_back(new Standard(size, 5.0, 15));
-         // spawn every 4 seconds
-         if (random(0, 4 * 30) == 1)
-            birds.push_back(new Sinker(size, 4.0, 22));
-         // spawn every 4 seconds
-         if (random(0, 4 * 30) == 1)
-            birds.push_back(new Floater(size));
-         break;
-         
+      // spawn every 4 seconds
+      appendBirdCode(code, size, birdType, speed, points, spawnRate);
+
+      // spawn every 4 seconds
+      birdType = SINKER;
+      speed = 40;
+      points = 22;
+      appendBirdCode(code, size, birdType, speed, points, spawnRate);
+
+      // spawn every 4 seconds
+      birdType = FLOATER;
+      speed = 50;
+      points = 15;
+      appendBirdCode(code, size, birdType, speed, points, spawnRate);
+      break;
+
       // three kinds of birds in level 4
-      case 4:
-         size = 15.0;
-         // spawns when there is nothing on the screen
-         if (birds.size() == 0 && random(0, 15) == 1)
-            birds.push_back(new Standard(size, 4.0, 18));
+   case 4:
+      size = 15;
+      speed = 40;
+      points = 18;
+      // spawns when there is nothing on the screen
+      if (birdsEmpty)
+         appendBirdCode(code, size, birdType, speed, points, 1);
 
-         // spawn every 4 seconds
-         if (random(0, 4 * 30) == 1)
-            birds.push_back(new Standard(size, 4.0, 18));
-         // spawn every 4 seconds
-         if (random(0, 4 * 30) == 1)
-            birds.push_back(new Sinker(size, 3.5, 25));
-         // spawn every 4 seconds
-         if (random(0, 4 * 30) == 1)
-            birds.push_back(new Floater(size, 4.0, 25));
-         // spawn every 4 seconds
-         if (random(0, 4 * 30) == 1)
-            birds.push_back(new Crazy(size));
-         break;
-         
-      default:
-         break;
+      // spawn every 4 seconds
+      appendBirdCode(code, size, birdType, speed, points, spawnRate);
+
+      // spawn every 4 seconds
+      birdType = SINKER;
+      speed = 35;
+      points = 25;
+      appendBirdCode(code, size, birdType, speed, points, spawnRate);
+
+      // spawn every 4 seconds
+      birdType = FLOATER;
+      speed = 40;
+      points = 25;
+      appendBirdCode(code, size, birdType, speed, points, spawnRate);
+      // spawn every 4 seconds
+      birdType = CRAZY;
+      speed = 45;
+      points = 30;
+      appendBirdCode(code, size, birdType, speed, points, spawnRate);
+      break;
+
+   default:
+      break;
    }
+   for (Bird* bird : Spawner::spawn(code))
+      birds.push_back(bird);
+}
+
+/************************
+ * APPEND BIRD CODE
+ * add the parameters to the spawn code
+ ************************/
+void Skeet::appendBirdCode(string& code,
+   int size,
+   int birdType,
+   int speed,
+   int points,
+   int spawnRate) const
+{
+   if (size < 0 || size > 99)
+      return;
+   if (birdType < 0 || birdType > 9)
+      return;
+   if (speed < 0 || speed > 99)
+      return;
+   if (points < 0 || points > 99)
+      return;
+   if (spawnRate < 0 || spawnRate > 9)
+      return;
+
+   ostringstream encoded;
+   encoded << setw(2) << setfill('0') << size
+      << birdType
+      << setw(2) << setfill('0') << speed
+      << setw(2) << setfill('0') << points
+      << spawnRate;
+   code += encoded.str();
 }
